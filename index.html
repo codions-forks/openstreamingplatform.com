@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/vendor/fontawesome-free-5.10.2-web/css/fontawesome.css">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="#">
+                <h3>
+                    <img id="navlogo" class="d-inline-block" width=48 height=48 src="/img/osplogo_nav.png" >
+                    <b>Open Streaming Platform</b>
+                </h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active px-2">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link disabled" href="#" disabled>Hub</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="https://osptest.divby0.net">Demo</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link disabled" href="#" disabled>Support</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="https://blog.divby0.net">Blog</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager"><img src="/img/gitlab.png" height="48"></a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="https://discord.gg/Jp5rzbD"><img src="/img/discord.png" height="48"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="banner-image">
+            <img class="shadow" src="/img/banner.jpg" width="100%" height="300px">
+        </div>
+
+        <div class="row w-100 my-4 px-md-4 px-3">
+            <div class="col-12 col-md-7">
+                <h4>Open Streaming Platform</h4> <br>
+                <div class="card shadow mb-4" >
+                    <div class="card-header bg-success"><h5><b>Current Release</b></h5></div>
+                    <div class="card-body">
+                        <h6 class="card-title"><b>Beta 2a</b></h6>
+                        <p class="card-text">
+                            <b>Released:</b> August 6, 2019<br>
+                            <a href="#">Change Log</a>
+                        </p>
+
+                        <div class="my-4">
+                            <a href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager/tree/release/Beta2" class="btn btn-warning shadow mr-2 px-5 my-1"><i class="fas fa-file-code"></i> Source</a>
+                            <a href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager/-/archive/Beta2a/flask-nginx-rtmp-manager-Beta2a.tar.gz" class="btn btn-success shadow mr-2 px-5 my-1"><i class="fas fa-file-archive"></i> Release (tar.gz)</a>
+                            <a href="https://hub.docker.com/r/deamos/openstreamingplatform" class="btn btn-primary shadow px-5 my-1"><i class="fab fa-docker"></i> Docker</a>
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    Open Streaming Platform (OSP) is an open-source, RTMP streamer software front-end for Arut's Nginx-RTMP Module.  OSP was designed as a self-hosted alternative to services such as Twitch.tv, Ustream.tv, Mixer, and Youtube Live.
+                </p>
+                <p>
+                    OSP uses Python 3, the Flask Micro-Framerwork, Nginx-RTMP, VideoJS, Bootstrap, and other modules to build a home for your live streams, videos, and community.
+                </p>
+                <h5><u>Features:</u></h5>
+                <ul>
+                    <li>RTMP Streaming from an input source like Open Broadcast Software (OBS)</li>
+                    <li>Multiple Channels per User, allowing a single user to broadcast multiple streams at the same time without needing multiple accounts</li>
+                    <li>Video Stream Recording and On-Demand Playback</li>
+                    <li>Per Channel Real-Time Chat for Video Streams</li>
+                    <li>Manual Video Uploading of MP4s that are sourced outside of OSP</li>
+                    <li>Real-Time Chat Moderation by Channel Owners (Banning/Unbanning)</li>
+                    <li>Protected Streams to allow access only to the audience you want</li>
+                    <li>Live Channels - Keep chatting and hang out when a stream isn't on</li>
+                    <li>Webhooks - Connect OSP to other services via fully customizable HTTP requests which will pass information</li>
+                    <li>Embed you stream or video directly into another web page easily</li>
+                    <li>Share channels or videos via Facebook or Twitter quickly</li>
+                    <li>Ability to Customize the UI as a Theme for your own personal look</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-5">
+                <div id="carousel1" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="/img/beta2-1.jpg">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="/img/beta2-2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="/img/beta2-3.jpg" alt="Third slide">
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

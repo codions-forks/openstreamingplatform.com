@@ -1,0 +1,21 @@
+body {
+    background-color:white;
+    color: black;
+}
+
+#navlogo {
+    margin-right:30px;
+}
+
+#navbarSupportedContent {
+    font-size: 1.50em;
+}
+#navbarSupportedContent li {
+    font-weight: bold;
+}
+
+.banner-image {
+    position: relative;
+    margin-top:10px;
+    width:100%;
+}
