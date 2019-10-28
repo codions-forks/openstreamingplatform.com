@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active px-2">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item px-2">
                         <a class="nav-link" href="https://osptest.divby0.net">Demo</a>
@@ -74,13 +74,14 @@
                     <li><a href="#3">Clips</a></li>
                     <li><a href="#4">Video Uploads</a></li>
                     <li><a href="#5">Channel Protection</a></li>
+                    <li><a href="#6">Troubleshooting</a></li>
                 </ul>
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <h2 id="0">Streaming to OSP</h2>
                 <p>
                     In order to stream to OSP, a channel with a valid stream key is needed. After creating a channel, the streaming program must be set to the corresponding URL<br>
-                    <code class="text-success ml-4">rtmp://{{sysSettings.siteAddress}}/stream/&lt;steam-key&gt;</code><br>
+                    <code class="text-success ml-4">rtmp://Site FQDN or IP/stream/&lt;steam-key&gt;</code><br>
                     Note that only registered users with the <em>streamer</em> role are able to stream to OSP.
                 </p>
                 <h4 id="00">With OBS</h4>
@@ -213,7 +214,7 @@
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <h2 id="2">API</h2>
                 <p>
-                    OSP provides a self-documenting API using <a href="https://swagger.io">swagger.io</a>. The API can be accessed at <a href="{{sysSettings.siteProtocol}}{{sysSettings.siteAddress}}/apiv1">{{sysSettings.siteAddress}}/apiv1</a>. For authenticated endpoints, an API key is needed, which can be created by users with the <em>streamer</em> role in the user menu to the top right. Requests to authenticated endpoints must have the <code class="text-success">'X-API-KEY':</code> header field set with a valid API key.
+                    OSP provides a self-documenting API using <a href="https://swagger.io">swagger.io</a>. The API can be accessed at http(s)://Site FQDN or IP/apiv1". For authenticated endpoints, an API key is needed, which can be created by users with the <em>streamer</em> role in the user menu to the top right. Requests to authenticated endpoints must have the <code class="text-success">'X-API-KEY':</code> header field set with a valid API key.
                 </p>
                 <h5 id="21">Example</h5>
                 <p>
@@ -244,6 +245,22 @@
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <h2 id="5">Channel protection</h2>
                 <p>TBD</p>
+                <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
+            </div>
+            <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
+                <h2 id="6">Troubleshooting</h2>
+                <p>
+                    <ul>
+                        <li>
+                            <h6>OSP opens fine but when you try to stream to it, the stream never displays on the live channel page</h6>
+                            <ul> - Check the Admin Settings under Site Protocol and Site Address.  Incorrect values can cause the system to not pass the stream off properly to Nginx-RTMP.</ul>
+                        </li>
+                        <li>
+                            <h6>OSP doesn't open properly.  The tv static error pages doesn't show and instead, a basic 500 error page is given</h6>
+                            <ul> - Ensure the OSP service (sudo systemctl start osp) has been started. If it continues to fail, check the OSP logs at /var/log/gunicorn/error.log</ul>
+                        </li>
+                    </ul>
+                </p>
                 <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
             </div>
         </div>
