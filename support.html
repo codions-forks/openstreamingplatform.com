@@ -52,6 +52,16 @@
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <ul class="list-unstyled">
+                    <li><a href="#A">Installing</a></li>
+                    <ul>
+                        <li><a href="#A0">Automatic Install</a></li>
+                        <li><a href="#A1">Manual Install</a></li>
+                        <li><a href="#A2">Docker Install</a></li>
+                    </ul>
+                    <li><a href="#B">Upgrading</a></li>
+                    <ul>
+                        <li><a href="#B0">Standard Upgrade</a></li>
+                    </ul>
                     <li><a href="#0">Streaming to OSP</a></li>
                     <ul>
                         <li><a href="#00">With OBS</a></li>
@@ -78,24 +88,107 @@
                 </ul>
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
+                <h1 id="A">Installing</h1>
+                <h4 id="A0">Automatic Install</h4>
+                <p>
+                    OSP has been tested on Ubuntu 18.04 and Recent Debian Builds. The installation script may not work properly on other OS's.
+                    <li> 1) Clone the Gitlab Repo <br>
+                        <code class="codeblock">git clone https://gitlab.com/Deamos/flask-nginx-rtmp-manager.git</code>
+                    </li>
+                    <li> 2) Run the install script<br>
+                        <code class="codeblock">cd flask-nginx-rtmp-manager/setup </code><br>
+                        <code class="codeblock">sudo bash setup-osp.sh</code>
+                    </li>
+                    <li>The installation script will install the files in the following location:
+                        <ul>
+                            <li>Video Files, Video Stream Files, and User Uploaded Images: /var/www </li>
+                            <li>OSP Files: /opt/osp</li>
+                            <li>Nginx Config Files: /usr/local/nginx/conf/</li>
+                        </ul>
+                    </li>
+                    <li> 3) Rename the Configuration File <br>
+                        <code class="codeblock">cd /opt/osp/conf </code> <br>
+                        <code class="codeblock">sudo mv config.py.dist config.py</code>
+                    </li>
+                    <li> 4) Edit the Default Values in the Configuration File<br>
+                        <code class="codeblock">vi config.py</code>
+                    </li>
+                    <li> 6) Change the following values from their Default:<br>
+                        <ul>
+                            <li>dbLocation - By Default, OSP uses SQLite, but you can change this value to use MySQL or Maria DB. See <a href="https://docs.sqlalchemy.org/en/13/core/engines.html">https://docs.sqlalchemy.org/en/13/core/engines.html</a> for more info on format</li>
+                            <li>secretKey - Flask Secret Key, change this!</li>
+                            <li>passwordSalt - Flask Security uses this value for Salting User Passwords, change this!</li>
+                        </ul>
+                    </li>
+                    <li> 7) Restart the OSP service<br>
+                        <code class="codeblock">sudo systemctl restart osp</code>
+                    </li>
+                    <li> 8) Open a Web Browser and configure OSP<br>
+                        <code class="codeblock">http://[SERVER IP]/</code>
+                    </li>
+                </p>
+                <h4 id="A1">Manual Install</h4>
+                <p>Coming Soon...</p>
+                <h4 id="A2">Docker Install</h4>
+                <p>Coming Soon...</p>
+                <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
+                <h1 id="B">Upgrading</h1>
+                <h4 id="B0">Standard Upgrade</h4>
+                <p>
+                    <ul>
+                        <li>Backup your Nginx.conf and Database File:<br>
+                            <code class="codeblock">sudo cp /usr/local/nginx/conf/nginx.conf /usr/local/nginx/conf/nginx.conf.bak</code>
+                            <code class="codeblock">sudo cp /opt/osp/db/database.db /opt/osp/db/database.bak</code>
+                        </li>
+                        <li>Perform a Git Pull<br>
+                            <code class="codeblock">cd /opt/osp</code><br>
+                            <code class="codeblock">sudo git pull</code><br>
+                        </li>
+                        <li>Rerun the OSP Setup Script - Updates any Dependencies and Rebuilds Nginx<br>
+                            <code class="codeblock">cd setup </code><br>
+                            <code class="codeblock">sudo bash setup-osp.sh</code>
+                        </li>
+                        <li>Verify your Nginx.conf and make any needed changes<br>
+                            <code class="codeblock">sudo vi /usr/local/nginx/conf/nginx.conf</code>
+                        </li>
+                        <li>Run the DB Upgrade Script to Ensure the Database Schema is up-to-date<br>
+                            <code class="codeblock">sudo bash dbUpgrade.sh</code>
+                        </li>
+                        <li>Restart Nginx and OSP<br>
+                            <code class="codeblock">sudo systemctl restart nginx-osp</code><br>
+                            <code class="codeblock">sudo systemctl restart osp</code>
+                        </li>
+                    </ul>
+                </p>
+                <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
                 <h2 id="0">Streaming to OSP</h2>
                 <p>
                     In order to stream to OSP, a channel with a valid stream key is needed. After creating a channel, the streaming program must be set to the corresponding URL<br>
                     <code class="text-success ml-4">rtmp://Site FQDN or IP/stream/&lt;steam-key&gt;</code><br>
-                    Note that only registered users with the <em>streamer</em> role are able to stream to OSP.
+                    Note that only registered users with the <em>streamer</em> role are able to stream to OSP.<br>
+                    <br>
+                    OSP is configured by default with the following settings:<br>
+                    <ul>
+                        <li><b>hls_framents:</b> 1 second</li>
+                        <li><b>hls_playlist_length:</b> 10 seconds</li>
+                    </ul>
+                    Alterations to the the Nginx-RTMP configuration can be made by editing the osp-rtmp.conf file in /usr/local/nginx/conf.  More information on the Nginx-RTMP directives can be found at <a href="https://github.com/arut/nginx-rtmp-module/wiki/Directives">https://github.com/arut/nginx-rtmp-module/wiki/Directives</a>
                 </p>
                 <h4 id="00">With OBS</h4>
-                <p>TBD</p>
+                <h5>Reduced Delay Setup (5 seconds)</h5>
+                <p>Reduced Delay Streams can be achieved in OSP using the following settings:<br>
+                <img src="/img/OBS_LowLatency.jpg">
+                </p>
                 <h4 id="01">With ffmpeg</h4>
-                <p>TBD</p>
-                <h4 id="01">Transcoding</h4>
+                <p>Coming Soon...</p>
+                <h4 id="02">Transcoding</h4>
                 <p>
                     <em>Transcoding</em> or <em>adaptive streaming</em> is possible with OSP. It can be enabled globally in the admin settings. However, this feature uses the CPU of the server to re-encode the streams and requires a lot of CPU power. It's possible to utilize GPUs instead by changing the encoder used by ffmpeg in the <code class="text-success">osp-rtmp.conf</code>. Enabling transcoding will increase the stream latency. It may be necessary to increase the playlist length (see <a href="#03">Latency</a>).
                 </p>
                 <p>
                     By default, nginx has been configured to transcode 1080p, 720p, 480p, & 360p. You can optimize how streams are transcoded by editing the <code class="text-success">osp-rtmp.conf</code> file and following the instructions <a href="https://licson.net/post/setting-up-adaptive-streaming-with-nginx/">here</a>.
                 </p>
-                <h4 id="01">Latency</h4>
+                <h4 id="03">Latency</h4>
                 <p>
                     OSP uses HLS to serve RTMP streams to clients. This brings a certain latency by design. The default configuration of nginx is fine-tuned to reduce the latency as far as possible while providing stable HLS streams. For this configuration it is imporant that the encoder sends a keyframe every second! The latency should be 4.5 to 5 seconds.<br>
                     If streams are buffering, it's most likely because of a suboptimal network connection. In this case, increase the <code class="text-success">hls_playlist_length</code> in the <code class="text-success">osp-rtmp.conf</code>. The latency will increase with a longer playlist length.
@@ -208,7 +301,7 @@
     }
                 </code></pre>
                 <h5 id="101">Rocket.Chat</h5>
-                <p>TBD</p>
+                <p>Coming Soon...</p>
                 <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
@@ -234,17 +327,17 @@
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <h2 id="3">Clips</h2>
-                <p>TBD</p>
+                <p>Coming Soon...</p>
                 <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <h2 id="4">Video uploads</h2>
-                <p>TBD</p>
+                <p>Coming Soon...</p>
                 <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
                 <h2 id="5">Channel protection</h2>
-                <p>TBD</p>
+                <p>Coming Soon...</p>
                 <a href="#top"><i class="fas fa-arrow-circle-up"></i> top</a>
             </div>
             <div class="pt-4 col-sm-12 col-md-10 col-lg-8 mx-auto">
