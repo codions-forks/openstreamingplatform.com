@@ -145,7 +145,7 @@
                         </ul>
                     </li>
                     <li> 7) Restart the OSP service<br>
-                        <code class="codeblock">sudo systemctl restart osp</code>
+                        <code class="codeblock">sudo systemctl restart osp.target</code>
                     </li>
                     <li> 8) Open a Web Browser and configure OSP<br>
                         <code class="codeblock">http://[SERVER IP]/</code>
@@ -185,6 +185,7 @@
                             <code class="codeblock">sudo vi /usr/local/nginx/conf/nginx.conf</code>
                         </li>
                         <li>Run the DB Upgrade Script to Ensure the Database Schema is up-to-date<br>
+                            <code class="codeblock">sudo python manage.py db init **Only need this the first time for an OSP Install**</code>
                             <code class="codeblock">sudo bash dbUpgrade.sh</code>
                         </li>
                         <li>Restart Nginx and OSP<br>
