@@ -1,7 +1,7 @@
 
 body {
   	font-weight: 400;
-  	font-size: 16px;
+  	font-size: 1em;
   	line-height: 1.7;
   	color: #eee;
 	background-color: black;
@@ -322,6 +322,11 @@ body a{
   .social {
 	position: absolute;
     top: 30px;
+  }
+
+  .release {
+	  position: inherit;
+	  width: 100%;
   }
 
 }
