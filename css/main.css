@@ -311,7 +311,7 @@ body a{
 
 @media screen and (max-width: 720px) {
   .heading-primary {
-	font-size: .9em;
+	font-size: .7em;
   }
 
   .navbar {
@@ -328,9 +328,10 @@ body a{
   }
 
   .release {
-	  position: static;
+	  position: relative;
 	  width: 100%;
-	  left: 0;
+	  left: 0px;
+	  top: 20px;
 
   }
 
