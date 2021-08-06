@@ -310,6 +310,9 @@ body a{
 }
 
 @media screen and (max-width: 720px) {
+  .heading-primary {
+	font-size: .9em;
+  }
 
   .navbar {
     display: block;
@@ -325,8 +328,10 @@ body a{
   }
 
   .release {
-	  position: inherit;
+	  position: static;
 	  width: 100%;
+	  left: 0;
+
   }
 
 }
