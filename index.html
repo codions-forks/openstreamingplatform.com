@@ -1,94 +1,70 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <link rel="manifest" href="/img/site.webmanifest">
-
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="/vendor/fontawesome-free-5.10.2-web/css/all.css">
-
+        <title>Open Streaming Platform</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <a class="navbar-brand" href="/">
-                <h3>
-                    <img id="navlogo" class="d-inline-block" width=48 height=48 src="/img/osplogo_nav.png" >
-                    <b>Open Streaming Platform</b>
-                </h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active px-2">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="https://demo.openstreamingplatform.com">Demo</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="https://wiki.openstreamingplatform.com">Support</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="https://forums.openstreamingplatform.com">Forums</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="https://blog.divby0.net">Blog</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="/contribute">Contribute</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager"><img src="/img/gitlab.png" height="48"></a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="https://twitter.com/OSP_App"><img src="/img/twitter.png" height="48"></a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="https://discord.gg/Jp5rzbD"><img src="/img/discord.png" height="48"></a>
-                    </li>
-                </ul>
+        <header class="header shadow">
+            <div id="particles-js"></div>
+            <div class="brand-box">
+                <a href="/"><span class="brand"><img src="/img/osplogo_nav.png" style="width:128px;height:128px;"></span></a>
             </div>
-        </nav>
-        <div class="banner-image">
-            <img class="shadow" src="/img/banner.jpg" width="100%" height="300px">
-        </div>
+            <div class="nav-container">
+                <div class="navbar" id="myTopnav">
 
-        <div class="row w-100 my-4 px-md-4 px-3">
-            <div class="col-12 col-sm-12 col-lg-7">
-                <h4>Open Streaming Platform</h4> <br>
-                <div class="card shadow mb-4" >
-                    <div class="card-header bg-success"><h5><b>Current Release</b></h5></div>
-                    <div class="card-body">
-                        <h6 class="card-title"><b>0.8.9</b></h6>
-                        <p class="card-text">
-                            <b>Released:</b> July 31, 2021<br>
-                            <a href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager/-/tags">Change Log</a>
-                        </p>
+                    <a class="text-shadow nav-link" href="https://demo.openstreamingplatform.com"><b>Demo</b></a>
+                    <a class="text-shadow nav-link" href="https://forums.openstreamingplatform.com"><b>Forums</b></a>
+                    <a class="text-shadow nav-link" href="https://wiki.openstreamingplatform.com"><b>Support</b></a>
+                    <a class="text-shadow nav-link" href="https://blog.divby0.net"><b>Blog</b></a>
+                    <a class="text-shadow nav-link" href="#contribute"><b>Contribute</b></a>
 
-                        <div class="my-4">
-                            <a href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager/tree/release/0.8.x" class="btn btn-info shadow mr-2 px-5 my-1"><i class="fas fa-file-code"></i> Source</a>
-                            <a href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager/-/archive/0.8.9/flask-nginx-rtmp-manager-0.8.9.tar.gz" class="btn btn-success shadow mr-2 px-5 my-1"><i class="fas fa-file-archive"></i> Release (tar.gz)</a>
-                            <a href="https://hub.docker.com/r/deamos/openstreamingplatform" class="btn btn-primary shadow px-5 my-1"><i class="fab fa-docker"></i> Docker</a>
-                        </div>
+                </div>
+            </div>
+
+            <div class="text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary-main text-shadow">Open Streaming Platform</span>
+                    <span class="heading-primary-sub">Free, Self-Hosted, Open Source Streaming </span><br>
+                    <video class="mainVideos" muted autoplay loop controls>
+                        <source src="/img/OSPIntro.mp4" type="video/mp4">
+                    </video>
+                </h1>
+                <a href="https://wiki.openstreamingplatform.com/Install/Standard" class="btn btn-white btn-animated shadow">Get Started</a>
+            </div>
+            <div class="release shadow slide-in-left">
+                <div class="release-container">
+                    <div class="release-version-header">Current Release:
+                        <span id="releaseVersion"></span>
+                    </div>
+                    <div class="release-date-header">Release Date:
+                        <span id="releaseDate"></span>
+                    </div>
+                    <div class="release-button-row">
+                        <a class="releaseButton releaseButton-green shadow" href="#"><i class="fas fa-file-alt"></i> <b>Changelog</b></a>
+                        <a class="releaseButton releaseButton-purple shadow" href="#"><i class="fas fa-code-branch"></i> <b>Source</b></a>
+                        <a class="releaseButton releaseButton-cyan shadow" href="#"><i class="far fa-file-archive"></i> <b>Release (tar.gz)</b></a>
                     </div>
                 </div>
-
-                <p>
-                    Open Streaming Platform (OSP) is an open-source, RTMP streamer software front-end for Arut's Nginx-RTMP Module.  OSP was designed as a self-hosted alternative to services such as Twitch.tv, Ustream.tv, Mixer, and Youtube Live.
-                </p>
-                <p>
-                    OSP uses Python 3, the Flask Micro-Framework, Nginx-RTMP, VideoJS, Bootstrap, and other modules to build a home for your live streams, videos, and community.
-                </p>
-                <h5><u>Features:</u></h5>
+            </div>
+            <div class="social">
+                <a href="https://discord.gg/Jp5rzbD"><img src="/img/discord.png" width=52px height=52px></a>
+                <a href="https://twitter.com/OSP_App"><img src="/img/twitter.png" width=48px height=48px></a>
+                <a href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager"><img src="/img/gitlab.png" width=48px height=48px></a>
+            </div>
+        </header>
+        <div id="about" class="content-box midnight-city shadow">
+            <div class="sub-box">
+                <h2>About</h2>
+                <p>Open Streaming Platform (OSP) is an open-source, RTMP streamer software front-end for Arut's Nginx-RTMP Module. OSP was designed as a self-hosted alternative to services such as Twitch.tv, Ustream.tv, Mixer, and Youtube Live.</p>
+                <p>OSP uses Python 3, the Flask Micro-Framework, Nginx-RTMP, VideoJS, Bootstrap, and other modules to build a home for your live streams, videos, and community.</p>
+            </div>
+        </div>
+        <div id="features" class="content-box nighthawk shadow">
+            <div class="sub-box">
+                <h2>Features</h2>
                 <ul>
                     <li>RTMP Streaming from an input source like Open Broadcast Software (OBS)</li>
                     <li>Multiple Channels per User, allowing a single user to broadcast multiple streams at the same time without needing multiple accounts</li>
@@ -102,33 +78,67 @@
                     <li>Embed you stream or video directly into another web page easily</li>
                     <li>Share channels or videos via Facebook or Twitter quickly</li>
                     <li>Ability to Customize the UI as a Theme for your own personal look</li>
+                    <li>Restream to other RTMP destinations</li>
                 </ul>
             </div>
-            <div class="col-12 col-sm-12 col-lg-5">
-                <div id="carousel1" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block w-100" src="/img/beta2-1.jpg">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="/img/beta2-2.jpg">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="/img/beta2-3.jpg">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="/img/beta3-1.jpg">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="/img/beta3-2.jpg">
-                    </div>
-                  </div>
+        </div>
+        <div id="contribute" class="content-box shadow">
+            <div class="sub-box">
+                <h2>Contribute</h2>
+                <p>Open Streaming Platform is a free, open-source project that has been developed under the MIT License by developers giving their time to make something awesome for everyone that will respect your privacy.<br>
+                    Contributions to OSP will help support the developers and allow us to rent servers and get the tools needed to keep the Open Streaming Platform alive. </p>
+                <p>Developers interested in contributing directly to the project may submit pull requests directly to our <a href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager">Gitlab Repository</a> or by <a href="https://discord.gg/Jp5rzbD">visiting our Discord.</a></p>
+                <h2>Donations</h2>
+              <p>Those interested in providing monetary donations may do so on our Open Collective page or via Bitcoin. Donations are made to a community fund which supports the developers and community of OSP.</p>
+                <h3>Bitcoin</h3>
+            </div>
+            <div style="text-align:center;">
+                <img src="img/bitcoin.png" style="width:128px;height:128px;"><br>
+                <b>Address</b>: <a href="bitcoin:15kkuya6SKYRHaBYkAqDY691H3Dik4cinp">15kkuya6SKYRHaBYkAqDY691H3Dik4cinp</a><br>
+                <b>Transactions</b>: <a href="https://www.blockchain.com/btc/address/15kkuya6SKYRHaBYkAqDY691H3Dik4cinp">https://www.blockchain.com/btc/address/15kkuya6SKYRHaBYkAqDY691H3Dik4cinp</a><br>
+            </div>
+            <div class="sub-box">
+                <h3>Open Collective</h3>
+                   <script src="https://opencollective.com/open-streaming-platform/donate/button.js" color="blue"></script>
+                <div class="open-collective-banner">
+                <script src='https://opencollective.com/open-streaming-platform/banner.js?style={"a":{"color":"white","text-decoration":"underline"},"h2":{"fontFamily":"Verdana","fontWeight":"normal","fontSize":"20px","color":"white"}}'></script>
                 </div>
             </div>
         </div>
+    <script>
+        const repo = "https://gitlab.com/api/v4/projects/5871108/releases/"
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+              var status = xhr.status;
+              if (status === 200) {
+                callback(null, xhr.response);
+              } else {
+                callback(status, xhr.response);
+              }
+            };
+            xhr.send();
+        };
+
+        getJSON(repo,
+        function(err, data) {
+          if (err !== null) {
+            alert('Something went wrong: ' + err);
+          } else {
+              var tagID = data[0]['tag_name'];
+              var releaseDate = data[0]['released_at'].substring(0,10);
+              document.getElementById('releaseVersion').innerHTML = tagID;
+              document.getElementById('releaseDate').innerHTML = releaseDate;
+          }
+        });
+    </script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {"particles":{"number":{"value":160,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":1,"opacity_min":0,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":4,"size_min":0.3,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":1,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":600}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":250,"size":0,"duration":2,"opacity":0,"speed":3},"repulse":{"distance":400,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+    </script>
+
     </body>
 </html>
