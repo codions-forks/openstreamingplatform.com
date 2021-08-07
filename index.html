@@ -27,11 +27,11 @@
             <div class="text-box">
                 <h1 class="heading-primary">
                     <span class="heading-primary-main text-shadow">Open Streaming Platform</span>
-                    <span class="heading-primary-sub">Free, Self-Hosted, Open Source Streaming </span><br>
-                    <video class="mainVideos" muted autoplay controls>
-                        <source src="/img/OSPIntro.mp4" type="video/mp4">
-                    </video>
+                    <span class="heading-primary-sub text-shadow">Free, Self-Hosted, Open Source Streaming </span><br>
                 </h1>
+                <video class="mainVideos" muted autoplay controls>
+                    <source src="/img/OSPIntro.mp4" type="video/mp4">
+                </video><br>
                 <a href="https://wiki.openstreamingplatform.com/Install/Standard" class="btn btn-white btn-animated shadow">Get Started</a>
             </div>
             <div class="release shadow slide-in-left">
@@ -43,9 +43,9 @@
                         <span id="releaseDate"></span>
                     </div>
                     <div class="release-button-row">
-                        <a class="releaseButton releaseButton-green shadow" href="#"><i class="fas fa-file-alt"></i> <b>Changelog</b></a>
-                        <a class="releaseButton releaseButton-purple shadow" href="#"><i class="fas fa-code-branch"></i> <b>Source</b></a>
-                        <a class="releaseButton releaseButton-cyan shadow" href="#"><i class="far fa-file-archive"></i> <b>Release (tar.gz)</b></a>
+                        <a class="releaseButton releaseButton-green shadow" href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager/-/tags"><i class="fas fa-file-alt"></i> <b>Changelog</b></a>
+                        <a class="releaseButton releaseButton-purple shadow" href="https://gitlab.com/Deamos/flask-nginx-rtmp-manager"><i class="fas fa-code-branch"></i> <b>Source</b></a>
+                        <a class="releaseButton releaseButton-cyan shadow" id="release-href" href="#"><i class="far fa-file-archive"></i> <b>Release (tar.gz)</b></a>
                     </div>
                 </div>
             </div>
@@ -130,8 +130,18 @@
           } else {
               var tagID = data[0]['tag_name'];
               var releaseDate = data[0]['released_at'].substring(0,10);
+              var releases = data[0]['assets']['sources'];
+              var releaseArray = {};
+              for (var i = 0; i < releases.length; i++) {
+                 var key = releases[i]['format'];
+                 var val = releases[i]['url'];
+                 releaseArray[key] = val;
+              }
+              const getByKey = (arr,key) => (arr.find(x => Object.keys(x)[0] === key) || {})[key]
+
               document.getElementById('releaseVersion').innerHTML = tagID;
               document.getElementById('releaseDate').innerHTML = releaseDate;
+              document.getElementById('release-href').href=releaseArray['tar.gz']
           }
         });
     </script>

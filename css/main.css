@@ -1,5 +1,5 @@
-
 body {
+	Font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
   	font-weight: 400;
   	font-size: 1em;
   	line-height: 1.7;
@@ -44,7 +44,7 @@ body a{
 }
 
 .text-shadow {
-	text-shadow: 1px 1px 6px black;
+	text-shadow: 2px 2px 6px black;
 }
 
 .header {
@@ -77,25 +77,25 @@ body a{
   	text-transform: uppercase;
 
   	backface-visibility: hidden;
-  	margin-bottom: 30px;
 }
 
 .heading-primary-main {
   	display: block;
-  	font-size: 26px;
+  	font-size: 1em;
   	font-weight: 400;
   	letter-spacing: 5px;
 }
 
 .heading-primary-sub {
   	display: block;
-  	font-size: 18px;
+  	font-size: .75em;
   	font-weight: 700;
   	letter-spacing: 7.4px;
 }
 
 .btn:link,
 .btn:visited {
+	margin-top: 20px;
   	text-transform: uppercase;
   	text-decoration: none;
   	padding: 10px 20px;
@@ -199,7 +199,6 @@ body a{
 
 .mainVideos {
 	width: 610px;
-	height: 300px;
 }
 
 .midnight-city {
@@ -310,9 +309,19 @@ body a{
 }
 
 @media screen and (max-width: 720px) {
-  .heading-primary {
-	font-size: .7em;
-  }
+  .heading-primary-main {
+		display: block;
+		font-size: .85em;
+		font-weight: 400;
+		letter-spacing: 5px;
+	}
+
+	.heading-primary-sub {
+		display: block;
+		font-size: .65em;
+		font-weight: 700;
+		letter-spacing: 7.4px;
+	}
 
   .navbar {
     display: block;
@@ -328,12 +337,13 @@ body a{
   }
 
   .release {
-	  position: relative;
-	  width: 100%;
+	  margin: 10px 15px;
 	  left: 0px;
-	  top: 20px;
-
   }
+
+  .mainVideos {
+	width: 100%;
+}
 
 }
 
