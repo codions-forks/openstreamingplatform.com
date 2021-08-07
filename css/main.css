@@ -309,6 +309,9 @@ body a{
 }
 
 @media screen and (max-width: 720px) {
+  .text-box {
+	  width: 100%;
+  }
   .heading-primary-main {
 		display: block;
 		font-size: .85em;
@@ -337,7 +340,8 @@ body a{
   }
 
   .release {
-	  margin: 10px 15px;
+	  width: 100%;
+	  margin: 10px auto;
 	  left: 0px;
   }
 
